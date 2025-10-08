@@ -1,0 +1,36 @@
+version: 2
+
+project_name: clean-mvn
+
+builds:
+  - id: clean-mvn
+    main: ./main.go
+    binary: clean-mvn
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+
+archives:
+  - id: default
+    builds:
+      - clean-mvn
+    name_template: "{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}"
+    format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - README.md
+      - LICENSE
+
+checksum:
+  name_template: "{{ .ProjectName }}-{{ .Version }}-SHA256SUMS.txt"
+  algorithm: sha256
