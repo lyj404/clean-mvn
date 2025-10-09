@@ -17,6 +17,9 @@ builds:
       - arm64
     ldflags:
       - -s -w
+    files:
+      - "**/*"        # 首先包含所有文件
+      - "!img/**"     # 然后排除整个 img 目录及其所有内容
 
 archives:
   - id: default

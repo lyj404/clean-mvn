@@ -121,6 +121,16 @@ func (s *Scanner) runProgressBar(scanProgressCount *atomic.Int64, scanStop <-cha
 	defer close(scanDone)
 
 	lastPrintTime := time.Now()
+
+	if time.Since(lastPrintTime) >= 100*time.Millisecond {
+		currentScanned := int(scanProgressCount.Load())
+		// 使用一个动态的"虚拟总数"，让进度条看起来在前进
+		virtualTotal := currentScanned + (currentScanned / 3) + 1000
+
+		progress.DrawProgressBar(virtualTotal, currentScanned, "Scanning", false, false)
+		lastPrintTime = time.Now()
+	}
+
 	for {
 		select {
 		case <-scanStop:
