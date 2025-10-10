@@ -3,11 +3,11 @@ package main
 import (
 	"runtime"
 
-	"clean-mvn/internal/cleaner"
-	"clean-mvn/internal/logger"
-	"clean-mvn/internal/scanner"
-	"clean-mvn/internal/util"
-	"clean-mvn/pkg/types"
+	"github.com/lyj404/clean-mvn/internal/cleaner"
+	"github.com/lyj404/clean-mvn/internal/logger"
+	"github.com/lyj404/clean-mvn/internal/scanner"
+	"github.com/lyj404/clean-mvn/internal/util"
+	"github.com/lyj404/clean-mvn/pkg/types"
 )
 
 func main() {

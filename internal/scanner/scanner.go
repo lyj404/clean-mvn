@@ -8,9 +8,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"clean-mvn/internal/logger"
-	"clean-mvn/internal/progress"
-	"clean-mvn/pkg/types"
+	"github.com/lyj404/clean-mvn/internal/logger"
+	"github.com/lyj404/clean-mvn/internal/progress"
+	"github.com/lyj404/clean-mvn/pkg/types"
 )
 
 // Scanner Maven仓库扫描器

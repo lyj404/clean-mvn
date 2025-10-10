@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"clean-mvn/internal/logger"
+	"github.com/lyj404/clean-mvn/internal/logger"
 )
 
 // 进度条样式配置

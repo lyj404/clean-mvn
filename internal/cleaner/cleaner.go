@@ -3,9 +3,9 @@ package cleaner
 import (
 	"os"
 
-	"clean-mvn/internal/logger"
-	"clean-mvn/internal/progress"
-	"clean-mvn/pkg/types"
+	"github.com/lyj404/clean-mvn/internal/logger"
+	"github.com/lyj404/clean-mvn/internal/progress"
+	"github.com/lyj404/clean-mvn/pkg/types"
 )
 
 // Cleaner 清理器

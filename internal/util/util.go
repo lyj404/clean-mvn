@@ -2,12 +2,13 @@ package util
 
 import (
 	"bufio"
-	"clean-mvn/internal/logger"
-	"clean-mvn/pkg/types"
 	"fmt"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/lyj404/clean-mvn/internal/logger"
+	"github.com/lyj404/clean-mvn/pkg/types"
 )
 
 // GetUserInput 获取用户输入的路径
