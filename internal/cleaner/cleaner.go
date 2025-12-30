@@ -35,15 +35,14 @@ func (c *Cleaner) CleanDirectories(results []types.Result) CleanResult {
 	c.logger.Info("Starting file deletion...")
 
 	for i := 0; i < totalToDelete; i++ {
-		res := results[i]
-		if err := os.RemoveAll(res.Path); err != nil {
-			c.logger.Error("Failed to delete directory '%s': %v", res.Path, err)
+		result := results[i]
+		if err := os.RemoveAll(result.Path); err != nil {
+			c.logger.Error("Failed to delete directory '%s': %v", result.Path, err)
 		} else {
 			deletedCount++
-			deletedSize += res.Size
+			deletedSize += result.Size
 		}
 
-		// 更新进度条
 		progress.DrawProgressBar(totalToDelete, deletedCount, "Deleting", i == totalToDelete-1, true)
 	}
 
