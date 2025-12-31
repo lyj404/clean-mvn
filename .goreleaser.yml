@@ -30,10 +30,8 @@ archives:
     files:
       - README.md
       - LICENSE
-      # 必要目录
-      - internal/**/*
-      - pkg/**/*
 
 checksum:
   name_template: "{{ .ProjectName }}-{{ .Version }}-SHA256SUMS.txt"
   algorithm: sha256
+
